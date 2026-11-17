@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GU Turismo | Ingressos, Transfers Privativos e Combos em Foz do Iguaçu</title>
+  <meta name="description" content="Receptivo em Foz do Iguaçu, Argentina e Paraguai. Monte seu orçamento de ingressos, transfers privativos e combos direto pelo WhatsApp.">
+  
+  <!-- Favicon Monograma GU Turismo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%238FD14F'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-weight='900' font-size='28' letter-spacing='-1.5' fill='%23071C3B'%3EGU%3C/text%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-[#071C3B]/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+      
+      <!-- Logo / Monograma GU Turismo -->
+      <a href="#" class="flex items-center gap-3 group shrink-0">
+        <div class="w-11 h-11 rounded-xl bg-[#8FD14F] flex items-center justify-center shadow-lg shadow-[#8FD14F]/20 group-hover:scale-105 transition-transform">
+          <span class="text-[#071C3B] font-extrabold text-xl tracking-tighter">GU</span>
+        </div>
+        <div class="hidden sm:block">
+          <span class="block text-white font-extrabold text-lg leading-none tracking-tight">GU TURISMO</span>
+          <span id="nav-subtitle" class="block text-[#8FD14F] text-[11px] font-semibold uppercase tracking-widest mt-0.5">Foz do Iguaçu • Receptivo</span>
+        </div>
+      </a>
+
+      <!-- Links Desktop -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-200">
+        <a href="#catalogo" id="nav-catalogo" class="hover:text-[#8FD14F] transition-colors">Catálogo</a>
+        <a href="#diferenciais" id="nav-diferenciais" class="hover:text-[#8FD14F] transition-colors">Diferenciais</a>
+        <a href="#como-funciona" id="nav-como" class="hover:text-[#8FD14F] transition-colors">Como Funciona</a>
+      </nav>
+
+      <!-- Seletor de Idioma com Bandeiras + Carrinho -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center bg-white/10 p-1 rounded-xl border border-white/15 gap-0.5" role="group" aria-label="Idioma">
+          <!-- Português (Brasil) -->
+          <button onclick="mudarIdioma('pt')" data-lang="pt" title="Português"
+            class="btn-lang px-2 sm:px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-[#8FD14F] text-[#071C3B] flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-4 h-3 rounded-[2px] shrink-0 shadow-xs" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="20" fill="#009B3A"/>
+              <polygon points="14,2 25,10 14,18 3,10" fill="#FEDF00"/>
+              <circle cx="14" cy="10" r="4.5" fill="#002776"/>
+            </svg>
+            <span>PT</span>
+          </button>
+
+          <!-- Español (Argentina / Latinoamérica) -->
+          <button onclick="mudarIdioma('es')" data-lang="es" title="Español"
+            class="btn-lang px-2 sm:px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-white hover:text-[#8FD14F] flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-4 h-3 rounded-[2px] shrink-0 shadow-xs" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="6.66" y="0" fill="#74ACDF"/>
+              <rect width="28" height="6.68" y="6.66" fill="#FFFFFF"/>
+              <rect width="28" height="6.66" y="13.34" fill="#74ACDF"/>
+              <circle cx="14" cy="10" r="2.2" fill="#F6B40E"/>
+            </svg>
+            <span>ES</span>
+          </button>
+
+          <!-- English (USA) -->
+          <button onclick="mudarIdioma('en')" data-lang="en" title="English"
+            class="btn-lang px-2 sm:px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-white hover:text-[#8FD14F] flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-4 h-3 rounded-[2px] shrink-0 shadow-xs" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="20" fill="#B22234"/>
+              <rect width="28" height="2.85" y="2.85" fill="#FFFFFF"/>
+              <rect width="28" height="2.85" y="8.55" fill="#FFFFFF"/>
+              <rect width="28" height="2.85" y="14.25" fill="#FFFFFF"/>
+              <rect width="12" height="11.4" x="0" y="0" fill="#3C3B6E"/>
+            </svg>
+            <span>EN</span>
+          </button>
+        </div>
+
+        <button onclick="abrirModalCarrinho()" class="relative bg-[#8FD14F] hover:bg-[#7ec23e] text-[#071C3B] font-bold text-sm px-3.5 sm:px-4 py-2.5 rounded-xl flex items-center gap-2 transition-all shadow-md cursor-pointer">
+          <i class="fa-solid fa-calculator"></i>
+          <span id="nav-orcamento" class="hidden md:inline">Meu Orçamento</span>
+          <span id="badge-contador" class="bg-[#071C3B] text-white text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-[#071C3B] text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-30 bg-[url('img/img-cataratas-passarela.webp')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#071C3B] via-[#071C3B]/90 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#8FD14F] text-xs font-bold uppercase tracking-wider mb-6">
+          <i class="fa-solid fa-location-dot"></i> <span id="hero-badge">Brasil • Argentina • Paraguai</span>
+        </div>
+        <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          Sua viagem em Foz do Iguaçu sem <span class="text-[#8FD14F]">perrengue.</span>
+        </h1>
+        <p id="hero-desc" class="mt-5 text-lg text-slate-300 leading-relaxed">
+          Ingressos oficiais (Inteira e Meia-Entrada), transfers privativos com pontualidade e combos especiais. Monte seu roteiro abaixo e envie direto para nosso WhatsApp.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#catalogo" class="bg-[#8FD14F] hover:bg-[#7ec23e] text-[#071C3B] font-extrabold px-7 py-4 rounded-xl text-base transition-all shadow-lg shadow-[#8FD14F]/20 flex items-center gap-2">
+            <i class="fa-solid fa-compass"></i> <span id="hero-cta-primary">Montar Meu Roteiro</span>
+          </a>
+          <button onclick="falarDiretoWhatsApp()"
+            class="bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold px-6 py-4 rounded-xl text-base transition-all flex items-center gap-2 cursor-pointer">
+            <i class="fa-brands fa-whatsapp text-[#8FD14F] text-xl"></i> <span id="hero-cta-secondary">Falar com Especialista</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE TICKETS, TRANSFERS E COMBOS -->
+  <section id="catalogo" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span id="cat-eyebrow" class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#8FD14F]/20 text-[#071C3B]">
+          Tarifário Oficial 2026
+        </span>
+        <h2 id="cat-title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-[#071C3B]">
+          Tickets, Transfers & Combos
+        </h2>
+        <p id="cat-subtitle" class="mt-3 text-slate-600">
+          Selecione entre Inteira ou Meia/Mercosul nos ingressos e adicione ao seu orçamento. O cálculo atualiza na hora!
+        </p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10" id="filtros-catalogo">
+        <button onclick="filtrarCatalogo('todos')" data-categoria="todos"
+          class="btn-filtro px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-[#071C3B] text-white shadow-md cursor-pointer">
+          <i class="fa-solid fa-layer-group mr-2 text-[#8FD14F]"></i><span id="flt-todos">Todos</span>
+        </button>
+        <button onclick="filtrarCatalogo('tickets')" data-categoria="tickets"
+          class="btn-filtro px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-[#071C3B] border border-slate-200 hover:border-[#071C3B] cursor-pointer">
+          <i class="fa-solid fa-ticket mr-2 text-[#8FD14F]"></i><span id="flt-tickets">Tickets</span>
+        </button>
+        <button onclick="filtrarCatalogo('transfers')" data-categoria="transfers"
+          class="btn-filtro px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-[#071C3B] border border-slate-200 hover:border-[#071C3B] cursor-pointer">
+          <i class="fa-solid fa-car-side mr-2 text-[#8FD14F]"></i><span id="flt-transfers">Transfers Privativos</span>
+        </button>
+        <button onclick="filtrarCatalogo('combos')" data-categoria="combos"
+          class="btn-filtro px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-[#071C3B] border border-slate-200 hover:border-[#071C3B] cursor-pointer">
+          <i class="fa-solid fa-fire mr-2 text-[#8FD14F]"></i><span id="flt-combos">Combos</span>
+        </button>
+      </div>
+
+      <!-- Grid de Cards -->
+      <div id="grid-catalogo" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="py-16 bg-white border-y border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-[#071C3B] text-[#8FD14F] flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 id="dif1-title" class="text-lg font-bold text-[#071C3B]">Atendimento Privativo</h3>
+          <p id="dif1-desc" class="mt-2 text-sm text-slate-600">Sem esperar grupos grandes ou perder tempo em filas de vans. Seu horário é a nossa prioridade.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-[#071C3B] text-[#8FD14F] flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-passport"></i>
+          </div>
+          <h3 id="dif2-title" class="text-lg font-bold text-[#071C3B]">Suporte nas Aduanas</h3>
+          <p id="dif2-desc" class="mt-2 text-sm text-slate-600">Orientação completa sobre documentos exigidos para travessias na Argentina e no Paraguai.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-[#071C3B] text-[#8FD14F] flex items-center justify-center text-xl mb-4">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3 id="dif3-title" class="text-lg font-bold text-[#071C3B]">Roteiro Sob Medida</h3>
+          <p id="dif3-desc" class="mt-2 text-sm text-slate-600">Otimizamos a ordem dos seus passeios para você aproveitar cada dia da viagem ao máximo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" class="py-16 bg-[#071C3B] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 id="how-title" class="text-3xl font-extrabold">Como reservar com a <span class="text-[#8FD14F]">GU Turismo</span></h2>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+          <span class="text-[#8FD14F] font-extrabold text-2xl">01.</span>
+          <h3 id="how1-title" class="mt-2 font-bold text-lg">Escolha no Catálogo</h3>
+          <p id="how1-desc" class="mt-1 text-sm text-slate-300">Adicione tickets (inteira ou meia), transfers privativos ou combos e ajuste as quantidades.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+          <span class="text-[#8FD14F] font-extrabold text-2xl">02.</span>
+          <h3 id="how2-title" class="mt-2 font-bold text-lg">Envie pelo WhatsApp</h3>
+          <p id="how2-desc" class="mt-1 text-sm text-slate-300">Com um clique, o resumo completo com valores estimados vai direto para nosso atendimento.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+          <span class="text-[#8FD14F] font-extrabold text-2xl">03.</span>
+          <h3 id="how3-title" class="mt-2 font-bold text-lg">Confirme Datas e Horários</h3>
+          <p id="how3-desc" class="mt-1 text-sm text-slate-300">Validamos a disponibilidade, emitimos seus vouchers e agendamos seu motorista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#041124] text-slate-400 py-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-[#8FD14F] flex items-center justify-center font-extrabold text-[#071C3B] text-sm">GU</div>
+        <span class="text-white font-bold">GU Turismo</span>
+        <span class="text-xs">• Foz do Iguaçu - PR • WhatsApp: +55 (45) 98819-0960</span>
+      </div>
+      <p id="footer-rights" class="text-xs">© 2026 GU Turismo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BARRA FLUTUANTE INFERIOR -->
+  <div id="barra-flutuante" class="fixed bottom-4 inset-x-4 sm:inset-x-auto sm:right-6 sm:w-96 bg-[#071C3B] text-white p-4 rounded-2xl shadow-2xl border border-[#8FD14F]/40 z-40 hidden transition-all">
+    <div class="flex items-center justify-between">
+      <div>
+        <span class="text-xs text-slate-300 block"><span id="flt-bar-label">Total estimado</span> (<span id="flutuante-qtd">0</span>)</span>
+        <span id="flutuante-total" class="text-xl font-extrabold text-[#8FD14F]">R$ 0,00</span>
+      </div>
+      <button onclick="abrirModalCarrinho()" class="bg-[#8FD14F] hover:bg-[#7ec23e] text-[#071C3B] font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer">
+        <span id="flt-bar-btn">Revisar & Enviar</span> <i class="fa-solid fa-arrow-right ml-1"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DO CARRINHO / CALCULADORA WHATSAPP -->
+  <div id="modal-carrinho" class="fixed inset-0 z-50 hidden">
+    <div onclick="fecharModalCarrinho()" class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-lg mx-auto mt-10 sm:mt-16 bg-white rounded-3xl shadow-2xl overflow-hidden m-4 flex flex-col max-h-[85vh]">
+      
+      <div class="bg-[#071C3B] text-white px-6 py-5 flex items-center justify-between">
+        <div>
+          <h3 id="modal-title" class="font-extrabold text-lg">Resumo do Orçamento</h3>
+          <p id="modal-subtitle" class="text-xs text-slate-300">Ajuste quantidades e envie direto para o WhatsApp</p>
+        </div>
+        <button onclick="fecharModalCarrinho()" class="text-slate-300 hover:text-white text-xl cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div id="lista-carrinho" class="p-6 overflow-y-auto space-y-4 flex-1"></div>
+
+      <div class="p-6 bg-slate-50 border-t border-slate-200 space-y-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <input type="text" id="cliente-nome" placeholder="Seu nome" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#071C3B]">
+          <input type="text" id="cliente-data" placeholder="Data prevista (ex: 15/12)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#071C3B]">
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <span id="modal-total-label" class="text-sm font-semibold text-slate-600">Total Estimado:</span>
+          <span id="modal-total" class="text-2xl font-extrabold text-[#071C3B]">R$ 0,00</span>
+        </div>
+
+        <button onclick="enviarParaWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2 text-base transition-all cursor-pointer">
+          <i class="fa-brands fa-whatsapp text-xl"></i> <span id="modal-send-btn">Enviar Orçamento no WhatsApp</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT PRINCIPAL -->
+  <script>
+    // ==========================================
+    // 1. WHATSAPP OFICIAL GU TURISMO
+    // ==========================================
+    const WHATSAPP_NUMERO = '5545988190960';
+
+    let idiomaAtual = 'pt';
+    let categoriaAtual = 'todos';
+    const selecaoTarifaCard = {};
+
+    // ==========================================
+    // 2. DICIONÁRIO MULTILÍNGUE (PT / ES / EN)
+    // ==========================================
+    const i18n = {
+      pt: {
+        navSubtitle: 'Foz do Iguaçu • Receptivo',
+        navCatalogo: 'Catálogo',
+        navDiferenciais: 'Diferenciais',
+        navComo: 'Como Funciona',
+        navOrcamento: 'Meu Orçamento',
+        heroBadge: 'Brasil • Argentina • Paraguai',
+        heroTitle: 'Sua viagem em Foz do Iguaçu sem <span class="text-[#8FD14F]">perrengue.</span>',
+        heroDesc: 'Ingressos oficiais (Inteira e Meia-Entrada), transfers privativos com pontualidade e combos especiais. Monte seu roteiro abaixo e envie direto para nosso WhatsApp.',
+        heroCtaPrimary: 'Montar Meu Roteiro',
+        heroCtaSecondary: 'Falar com Especialista',
+        catEyebrow: 'Tarifário Oficial 2026',
+        catTitle: 'Tickets, Transfers & Combos',
+        catSubtitle: 'Selecione entre Inteira ou Meia/Mercosul nos ingressos e adicione ao seu orçamento. O cálculo atualiza na hora!',
+        fltTodos: 'Todos',
+        fltTickets: 'Tickets',
+        fltTransfers: 'Transfers Privativos',
+        fltCombos: 'Combos',
+        dif1Title: 'Atendimento Privativo',
+        dif1Desc: 'Sem esperar grupos grandes ou perder tempo em filas de vans. Seu horário é a nossa prioridade.',
+        dif2Title: 'Suporte nas Aduanas',
+        dif2Desc: 'Orientação completa sobre documentos exigidos para travessias na Argentina e no Paraguai.',
+        dif3Title: 'Roteiro Sob Medida',
+        dif3Desc: 'Otimizamos a ordem dos seus passeios para você aproveitar cada dia da viagem ao máximo.',
+        howTitle: 'Como reservar com a <span class="text-[#8FD14F]">GU Turismo</span>',
+        how1Title: 'Escolha no Catálogo',
+        how1Desc: 'Adicione tickets (inteira ou meia), transfers privativos ou combos e ajuste as quantidades.',
+        how2Title: 'Envie pelo WhatsApp',
+        how2Desc: 'Com um clique, o resumo completo com valores estimados vai direto para nosso atendimento.',
+        how3Title: 'Confirme Datas e Horários',
+        how3Desc: 'Validamos a disponibilidade, emitimos seus vouchers e agendamos seu motorista.',
+        footerRights: '© 2026 GU Turismo. Todos os direitos reservados.',
+        fltBarLabel: 'Total estimado',
+        fltBarBtn: 'Revisar & Enviar',
+        modalTitle: 'Resumo do Orçamento',
+        modalSubtitle: 'Ajuste quantidades e envie direto para o WhatsApp',
+        placeholderNome: 'Seu nome',
+        placeholderData: 'Data prevista (ex: 15/12)',
+        modalTotalLabel: 'Total Estimado:',
+        modalSendBtn: 'Enviar Orçamento no WhatsApp',
+        btnAdicionar: 'Adicionar',
+        porPessoa: 'por pessoa',
+        porVeiculo: 'por veículo',
+        unidadePessoa: 'pessoa(s)',
+        unidadeVeiculo: 'veículo(s)',
+        labelInteira: 'Inteira',
+        labelMeia: 'Meia / Reduzida',
+        labelMercosul: 'Brasil / Mercosul',
+        labelIntegralEstrangeiro: 'Estrangeiro (Integral)',
+        carrinhoVazio: 'Seu orçamento está vazio. Adicione itens do catálogo!',
+        alertaVazio: 'Adicione pelo menos um item do catálogo antes de enviar.',
+        wppDireto: 'Olá, GU Turismo! Gostaria de ajuda para montar meu roteiro em Foz do Iguaçu.',
+        wppSaudacao: 'Olá, *GU Turismo*! Gostaria de solicitar um orçamento:',
+        wppCliente: '*Cliente:*',
+        wppData: '*Data prevista:*',
+        wppItens: '*Itens selecionados:*',
+        wppTotal: '*Total estimado:*',
+        wppRodape: 'Aguardo confirmação de disponibilidade!'
+      },
+      es: {
+        navSubtitle: 'Foz de Iguazú • Receptivo',
+        navCatalogo: 'Catálogo',
+        navDiferenciais: 'Diferenciales',
+        navComo: 'Cómo Funciona',
+        navOrcamento: 'Mi Presupuesto',
+        heroBadge: 'Brasil • Argentina • Paraguay',
+        heroTitle: 'Tu viaje en Foz de Iguazú sin <span class="text-[#8FD14F]">complicaciones.</span>',
+        heroDesc: 'Entradas oficiales (Tarifa Mercosur, General y Reducida), traslados privados puntuales y combos especiales. Arma tu itinerario y envíalo directo a nuestro WhatsApp.',
+        heroCtaPrimary: 'Armar Mi Itinerario',
+        heroCtaSecondary: 'Hablar con Especialista',
+        catEyebrow: 'Tarifario Oficial 2026',
+        catTitle: 'Tickets, Traslados Privados y Combos',
+        catSubtitle: 'Elige tu categoría de entrada (Mercosur/Reducida o General) y agrégala a tu presupuesto. ¡El total se calcula al instante!',
+        fltTodos: 'Todos',
+        fltTickets: 'Tickets',
+        fltTransfers: 'Traslados Privados',
+        fltCombos: 'Combos',
+        dif1Title: 'Atención Privada',
+        dif1Desc: 'Sin esperar grupos grandes ni perder tiempo en filas. Tu horario es nuestra prioridad.',
+        dif2Title: 'Asistencia en Aduanas',
+        dif2Desc: 'Orientación completa sobre documentación exigida para cruzar a Argentina y Paraguay.',
+        dif3Title: 'Itinerario a Medida',
+        dif3Desc: 'Optimizamos el orden de tus paseos para que aproveches cada día del viaje al máximo.',
+        howTitle: 'Cómo reservar con <span class="text-[#8FD14F]">GU Turismo</span>',
+        how1Title: 'Elige en el Catálogo',
+        how1Desc: 'Agrega tickets, traslados privados o combos y ajusta las cantidades.',
+        how2Title: 'Envía por WhatsApp',
+        how2Desc: 'Con un clic, el resumen completo con valores estimados llega directo a nuestro equipo.',
+        how3Title: 'Confirma Fechas y Horarios',
+        how3Desc: 'Validamos disponibilidad, emitimos tus vouchers y agendamos tu chofer privado.',
+        footerRights: '© 2026 GU Turismo. Todos los derechos reservados.',
+        fltBarLabel: 'Total estimado',
+        fltBarBtn: 'Revisar y Enviar',
+        modalTitle: 'Resumen del Presupuesto',
+        modalSubtitle: 'Ajusta cantidades y envía directo a WhatsApp',
+        placeholderNome: 'Tu nombre',
+        placeholderData: 'Fecha estimada (ej: 15/12)',
+        modalTotalLabel: 'Total Estimado:',
+        modalSendBtn: 'Enviar Presupuesto por WhatsApp',
+        btnAdicionar: 'Agregar',
+        porPessoa: 'por persona',
+        porVeiculo: 'por vehículo',
+        unidadePessoa: 'persona(s)',
+        unidadeVeiculo: 'vehículo(s)',
+        labelInteira: 'General',
+        labelMeia: 'Reducida',
+        labelMercosul: 'Brasil / Mercosur',
+        labelIntegralEstrangeiro: 'Extranjero (General)',
+        carrinhoVazio: 'Tu presupuesto está vacío. ¡Agrega ítems del catálogo!',
+        alertaVazio: 'Agrega al menos un ítem del catálogo antes de enviar.',
+        wppDireto: '¡Hola, GU Turismo! Me gustaría ayuda para armar mi itinerario en Foz de Iguazú.',
+        wppSaudacao: '¡Hola, *GU Turismo*! Quisiera solicitar un presupuesto:',
+        wppCliente: '*Cliente:*',
+        wppData: '*Fecha prevista:*',
+        wppItens: '*Ítems seleccionados:*',
+        wppTotal: '*Total estimado:*',
+        wppRodape: '¡Quedo atento a la confirmación de disponibilidad!'
+      },
+      en: {
+        navSubtitle: 'Iguazu Falls • Incoming Tour',
+        navCatalogo: 'Catalog',
+        navDiferenciais: 'Why Choose Us',
+        navComo: 'How It Works',
+        navOrcamento: 'My Quote',
+        heroBadge: 'Brazil • Argentina • Paraguay',
+        heroTitle: 'Your trip to Iguazu Falls <span class="text-[#8FD14F]">hassle-free.</span>',
+        heroDesc: 'Official attraction tickets, punctual private transfers, and special combos. Build your itinerary below and send it straight to our WhatsApp.',
+        heroCtaPrimary: 'Build My Itinerary',
+        heroCtaSecondary: 'Chat with an Expert',
+        catEyebrow: 'Official 2026 Rates',
+        catTitle: 'Tickets, Private Transfers & Combos',
+        catSubtitle: 'Select your ticket tier and add items to your quote. Totals update automatically in BRL!',
+        fltTodos: 'All',
+        fltTickets: 'Tickets',
+        fltTransfers: 'Private Transfers',
+        fltCombos: 'Combos',
+        dif1Title: 'Private Service',
+        dif1Desc: 'No waiting for large tour buses or crowded lines. Your schedule comes first.',
+        dif2Title: 'Border Crossing Support',
+        dif2Desc: 'Full guidance on required travel documents for crossing into Argentina and Paraguay.',
+        dif3Title: 'Tailor-Made Itinerary',
+        dif3Desc: 'We optimize the order of your tours so you get the most out of every single day.',
+        howTitle: 'How to book with <span class="text-[#8FD14F]">GU Turismo</span>',
+        how1Title: 'Pick from the Catalog',
+        how1Desc: 'Add attraction tickets, private transfers, or combos and adjust quantities.',
+        how2Title: 'Send via WhatsApp',
+        how2Desc: 'With one click, your itemized quote goes straight to our team.',
+        how3Title: 'Confirm Dates & Times',
+        how3Desc: 'We confirm availability, issue your vouchers, and schedule your private driver.',
+        footerRights: '© 2026 GU Turismo. All rights reserved.',
+        fltBarLabel: 'Estimated total',
+        fltBarBtn: 'Review & Send',
+        modalTitle: 'Quote Summary',
+        modalSubtitle: 'Adjust quantities and send directly via WhatsApp',
+        placeholderNome: 'Your name',
+        placeholderData: 'Travel date (e.g. 12/15)',
+        modalTotalLabel: 'Estimated Total:',
+        modalSendBtn: 'Send Quote on WhatsApp',
+        btnAdicionar: 'Add',
+        porPessoa: 'per person',
+        porVeiculo: 'per vehicle',
+        unidadePessoa: 'person(s)',
+        unidadeVeiculo: 'vehicle(s)',
+        labelInteira: 'Full Ticket',
+        labelMeia: 'Reduced / Half',
+        labelMercosul: 'Brazil / Mercosur',
+        labelIntegralEstrangeiro: 'Foreign Visitor (Full)',
+        carrinhoVazio: 'Your quote is empty. Add items from the catalog!',
+        alertaVazio: 'Please add at least one item from the catalog before sending.',
+        wppDireto: 'Hi GU Turismo! I would like help planning my Iguazu Falls itinerary.',
+        wppSaudacao: 'Hi *GU Turismo*! I would like to request a quote:',
+        wppCliente: '*Client:*',
+        wppData: '*Travel date:*',
+        wppItens: '*Selected items:*',
+        wppTotal: '*Estimated total:*',
+        wppRodape: 'Looking forward to availability confirmation!'
+      }
+    };
+
+    // ==========================================
+    // 3. CATÁLOGO OFICIAL (COM CATEGORIAS MÚLTIPLAS)
+    // ==========================================
+    const catalogoProdutos = [
+      // ==========================================
+      // TICKETS PRINCIPAIS
+      // ==========================================
+      {
+        id: 'tkt-cataratas-br',
+        categorias: ['tickets'],
+        icone: 'fa-water',
+        imagem: 'img/img-cataratas-passarela.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 134.00,
+        precoMeia: 121.00,
+        tipoTarifaEspecial: 'mercosul',
+        pt: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Cataratas do Iguaçu (Lado Brasileiro)',
+          descricao: 'Ingresso oficial Parque Nacional do Iguaçu com transporte interno panorâmico. Grátis até 6 anos.',
+          regraMeia: 'Tarifa reduzida válida para cidadãos do Brasil e países do Mercosul com documento.'
+        },
+        es: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Cataratas del Iguazú (Lado Brasileño)',
+          descricao: 'Entrada oficial al Parque Nacional do Iguaçu con transporte interno panorámico. Gratis hasta 6 años.',
+          regraMeia: 'Tarifa Mercosur válida para ciudadanos de Argentina, Paraguay, Uruguay y Brasil.'
+        },
+        en: {
+          badge: 'Ticket • Brazil',
+          titulo: 'Iguazu Falls (Brazilian Side)',
+          descricao: 'Official Iguaçu National Park ticket including internal panoramic shuttle. Free under age 6.',
+          regraMeia: 'Mercosur discounted rate applies to Brazil, Argentina, Paraguay & Uruguay citizens.'
+        }
+      },
+      {
+        id: 'tkt-parque-aves',
+        categorias: ['tickets'],
+        icone: 'fa-feather',
+        imagem: 'img/img-parque-aves.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 110.00,
+        precoMeia: 55.00,
+        pt: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Parque das Aves',
+          descricao: 'Imersão nos viveiros da Mata Atlântica com araras, tucanos e flamingos. Grátis até 8 anos.',
+          regraMeia: 'Meia-entrada para estudantes/crianças BR (9 a 16 anos), idosos BR (60+) e PcD.'
+        },
+        es: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Parque de las Aves',
+          descricao: 'Inmersión en aviarios de la Mata Atlántica con guacamayos, tucanes y flamencos. Gratis hasta 8 años.',
+          regraMeia: 'Tarifa reducida válida según ley brasileña (estudiantes/niños BR 9-16 años, mayores BR 60+ y PcD).'
+        },
+        en: {
+          badge: 'Ticket • Brazil',
+          titulo: 'Bird Park (Parque das Aves)',
+          descricao: 'Walk-in aviaries inside the Atlantic Rainforest with macaws, toucans & flamingos. Free up to age 8.',
+          regraMeia: 'Half-price applies under Brazilian law (BR students/kids 9–16, BR seniors 60+, and disabilities).'
+        }
+      },
+      {
+        id: 'tkt-macuco-safari',
+        categorias: ['tickets'],
+        icone: 'fa-ship',
+        imagem: 'img/img-macuco-safari.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 384.00,
+        precoMeia: 192.00,
+        pt: {
+          badge: 'Ticket • Aventura',
+          titulo: 'Macuco Safari (Passeio de Barco)',
+          descricao: 'Trilha na selva + passeio emocionante de barco bimotor até o banho nas quedas (não inclui ingresso do parque).',
+          regraMeia: 'Meia para crianças de 7 a 11 anos, estudantes e idosos BR (60+). Grátis de 0 a 6 anos.'
+        },
+        es: {
+          badge: 'Ticket • Aventura',
+          titulo: 'Macuco Safari (Paseo en Bote)',
+          descricao: 'Sendero en la selva + navegación en bote bimotor hasta las cascadas (no incluye entrada al parque).',
+          regraMeia: 'Tarifa reducida para niños de 7 a 11 años, estudiantes y mayores BR (60+). Gratis de 0 a 6 años.'
+        },
+        en: {
+          badge: 'Ticket • Adventure',
+          titulo: 'Macuco Safari (Boat Tour)',
+          descricao: 'Jungle trail + thrilling twin-engine boat ride under the waterfalls (park entry ticket sold separately).',
+          regraMeia: 'Half-price for children ages 7–11, students, and BR seniors (60+). Free ages 0–6.'
+        }
+      },
+      {
+        id: 'tkt-itaipu-panoramica',
+        categorias: ['tickets'],
+        icone: 'fa-bolt',
+        imagem: 'img/img-itaipu.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 63.00,
+        precoMeia: 31.50,
+        pt: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Itaipu Panorâmica',
+          descricao: 'Visita guiada de 1h10 pelos mirantes e barragem da maior geradora de energia limpa do planeta.',
+          regraMeia: 'Meia para estudantes BR, idosos BR (60+), professores, PcD e crianças de 6 a 11 anos.'
+        },
+        es: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Itaipú Panorámica',
+          descricao: 'Recorrido guiado de 1h10 por los miradores y la represa hidroeléctrica de Itaipú.',
+          regraMeia: 'Tarifa reducida para niños de 6 a 11 años, PcD, estudiantes y mayores BR.'
+        },
+        en: {
+          badge: 'Ticket • Brazil',
+          titulo: 'Itaipu Panoramic Tour',
+          descricao: '1h10 guided bus tour along the viewpoints and dam of the Itaipu Hydroelectric Power Plant.',
+          regraMeia: 'Half-price for children ages 6–11, visitors with disabilities, and eligible BR students/seniors.'
+        }
+      },
+      {
+        id: 'tkt-itaipu-especial',
+        categorias: ['tickets'],
+        icone: 'fa-gears',
+        imagem: 'img/img-itaipu-especial.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 185.00,
+        precoMeia: 92.50,
+        pt: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Itaipu Circuito Especial',
+          descricao: 'Visita completa de 2h30 conhecendo o interior da usina, galeria de turbinas e sala de controle (a partir de 14 anos).',
+          regraMeia: 'Meia para estudantes BR, idosos BR (60+), professores e PcD (idade mínima 14 anos).'
+        },
+        es: {
+          badge: 'Ticket • Brasil',
+          titulo: 'Itaipú Circuito Especial',
+          descricao: 'Visita de 2h30 por el interior de la represa, eje de turbinas y sala de control (mayores de 14 años).',
+          regraMeia: 'Tarifa reducida para PcD, estudiantes y mayores BR (edad mínima 14 años).'
+        },
+        en: {
+          badge: 'Ticket • Brazil',
+          titulo: 'Itaipu Special Circuit (Inside Dam)',
+          descricao: '2h30 in-depth tour inside the power plant, turbine shafts & control room (minimum age 14).',
+          regraMeia: 'Half-price for visitors with disabilities and eligible BR students/seniors (min. age 14).'
+        }
+      },
+      {
+        id: 'tkt-marco-tres-fronteiras',
+        categorias: ['tickets'],
+        icone: 'fa-monument',
+        imagem: 'img/img-marco-fronteiras.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 70.50,
+        precoMeia: 35.25,
+        pt: {
+          badge: 'Ticket • Cultural',
+          titulo: 'Marco das Três Fronteiras',
+          descricao: 'Pôr do sol histórico onde Brasil, Paraguai e Argentina se encontram, com shows culturais à noite.',
+          regraMeia: 'Meia para crianças de 6 a 11 anos, estudantes BR e idosos BR (60+).'
+        },
+        es: {
+          badge: 'Ticket • Cultural',
+          titulo: 'Hito de las Tres Fronteras',
+          descricao: 'Atardecer histórico donde se unen Brasil, Paraguay y Argentina, con shows culturales nocturnos.',
+          regraMeia: 'Tarifa reducida para niños de 6 a 11 años, estudiantes BR y mayores BR (60+).'
+        },
+        en: {
+          badge: 'Ticket • Cultural',
+          titulo: 'Three Borders Landmark',
+          descricao: 'Historic sunset viewpoint where Brazil, Paraguay & Argentina meet, featuring evening cultural shows.',
+          regraMeia: 'Half-price for children ages 6–11 and eligible BR students/seniors (60+).'
+        }
+      },
+      {
+        id: 'tkt-yup-star',
+        categorias: ['tickets'],
+        icone: 'fa-dharmachakra',
+        imagem: 'img/img-yup-star.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 79.90,
+        precoMeia: 39.90,
+        pt: {
+          badge: 'Ticket • Panorâmico',
+          titulo: 'Yup Star Foz (Roda-Gigante)',
+          descricao: 'Vista panorâmica de 88 metros de altura da Tríplice Fronteira e da Ponte da Integração.',
+          regraMeia: 'Meia para crianças de 4 a 11 anos, estudantes, idosos e professores.'
+        },
+        es: {
+          badge: 'Ticket • Panorámico',
+          titulo: 'Yup Star Foz (Rueda Gigante)',
+          descricao: 'Vista panorámica de 88 metros de altura de la Triple Frontera y el Puente de la Integración.',
+          regraMeia: 'Tarifa reducida para niños de 4 a 11 años, estudiantes y adultos mayores.'
+        },
+        en: {
+          badge: 'Ticket • Panoramic',
+          titulo: 'Yup Star Ferris Wheel',
+          descricao: '88-meter-tall panoramic views over the Triple Frontier and Integration Bridge.',
+          regraMeia: 'Half-price for children ages 4–11, students, and seniors.'
+        }
+      },
+      {
+        id: 'tkt-kattamaram',
+        categorias: ['tickets'],
+        icone: 'fa-ferry',
+        imagem: 'img/img-kattamaram.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 300.00,
+        precoMeia: 150.00,
+        pt: {
+          badge: 'Ticket • Pôr do Sol',
+          titulo: 'Kattamaram II (Com Jantar)',
+          descricao: 'Navegação pelo encontro dos rios Iguaçu e Paraná com jantar completo a bordo.',
+          regraMeia: 'Meia para crianças de 7 a 11 anos e beneficiários legais. Grátis até 6 anos.'
+        },
+        es: {
+          badge: 'Ticket • Atardecer',
+          titulo: 'Kattamaram II (Con Cena)',
+          descricao: 'Navegación por el encuentro de los ríos Iguazú y Paraná con cena buffet a bordo.',
+          regraMeia: 'Tarifa reducida para niños de 7 a 11 años. Gratis hasta 6 años.'
+        },
+        en: {
+          badge: 'Ticket • Sunset Cruise',
+          titulo: 'Kattamaram II (Dinner Cruise)',
+          descricao: 'Scenic boat cruise at the meeting of the Iguazu and Paraná rivers with buffet dinner onboard.',
+          regraMeia: 'Half-price for children ages 7–11. Free up to age 6.'
+        }
+      },
+
+      // --- JANTARES SHOW (TARIFA ÚNICA) ---
+      {
+        id: 'tkt-rafain-show',
+        categorias: ['tickets'],
+        icone: 'fa-utensils',
+        imagem: 'img/img-rafain-show.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 309.00,
+        pt: {
+          badge: 'Ticket • Jantar Show',
+          titulo: 'Rafain Churrascaria Show',
+          descricao: 'Buffet completo com carnes nobres + espetáculo artístico premiado da cultura latino-americana.'
+        },
+        es: {
+          badge: 'Ticket • Cena Show',
+          titulo: 'Rafain Churrascaria Show',
+          descricao: 'Buffet libre con cortes de carne + espectáculo artístico de música y danza latinoamericana.'
+        },
+        en: {
+          badge: 'Ticket • Dinner Show',
+          titulo: 'Rafain Steakhouse & Latin Show',
+          descricao: 'All-you-can-eat Brazilian BBQ buffet + award-winning Latin American folkloric dance show.'
+        }
+      },
+      {
+        id: 'tkt-madero-tango-vip',
+        categorias: ['tickets'],
+        icone: 'fa-wine-glass',
+        imagem: 'img/img-madero-tango.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 260.00,
+        pt: {
+          badge: 'Ticket • Argentina',
+          titulo: 'Madero Tango Iguazú (VIP Show + Jantar)',
+          descricao: 'Espetáculo de tango argentino em Puerto Iguazú com jantar e bebidas inclusas.'
+        },
+        es: {
+          badge: 'Ticket • Argentina',
+          titulo: 'Madero Tango Iguazú (VIP Show + Cena)',
+          descricao: 'Espectáculo de tango argentino en Puerto Iguazú con cena de 3 pasos y bebidas incluidas.'
+        },
+        en: {
+          badge: 'Ticket • Argentina',
+          titulo: 'Madero Tango Iguazú (VIP Dinner & Show)',
+          descricao: 'Authentic Argentine tango show in Puerto Iguazú including 3-course dinner and drinks.'
+        }
+      },
+      {
+        id: 'tkt-madero-tango-premium',
+        categorias: ['tickets'],
+        icone: 'fa-crown',
+        imagem: 'img/img-madero-tango-premium.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 310.00,
+        pt: {
+          badge: 'Ticket • Argentina VIP+',
+          titulo: 'Madero Tango Iguazú (Setor Premium)',
+          descricao: 'Localização privilegiada frente ao palco, menu degustação completo e bebidas selecionadas.'
+        },
+        es: {
+          badge: 'Ticket • Argentina VIP+',
+          titulo: 'Madero Tango Iguazú (Sector Premium)',
+          descricao: 'Ubicación privilegiada frente al escenario, menú degustación completo y bebidas seleccionadas.'
+        },
+        en: {
+          badge: 'Ticket • Argentina VIP+',
+          titulo: 'Madero Tango Iguazú (Premium Section)',
+          descricao: 'Prime front-stage seating, full gourmet tasting menu, and selected wines/beverages.'
+        }
+      },
+
+      // ==========================================
+      // GRUPO DREAMS — PASSAPORTES, TRIOS E COMBOS (EM TICKETS E COMBOS)
+      // ==========================================
+      {
+        id: 'tkt-dreams-5-atracoes',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-ticket',
+        imagem: 'img/img-dreams-park.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 210.00,
+        pt: {
+          badge: 'Dreams • Passaporte',
+          titulo: 'Passaporte Dreams 5 Atrações',
+          descricao: 'Acesso aos 5 atrativos: Museu de Cera, Vale dos Dinossauros, Ice Bar, Motor Show e Maravilhas.'
+        },
+        es: {
+          badge: 'Dreams • Pasaporte',
+          titulo: 'Pasaporte Dreams 5 Atracciones',
+          descricao: 'Acceso a los 5 atractivos: Museo de Cera, Valle de los Dinosaurios, Ice Bar, Motor Show y Maravillas.'
+        },
+        en: {
+          badge: 'Dreams • Pass',
+          titulo: 'Dreams 5-Attraction Pass',
+          descricao: 'Access to all 5 attractions: Wax Museum, Dinosaur Valley, Ice Bar, Motor Show & Wonders.'
+        }
+      },
+      {
+        id: 'tkt-dreams-5-atracoes-magic',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-wand-magic-sparkles',
+        imagem: 'img/img-dreams-magic.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 239.00,
+        pt: {
+          badge: 'Dreams • Passaporte',
+          titulo: 'Passaporte Dreams 5 Atrações + Magic Show',
+          descricao: 'Os 5 parques do Dreams Park Show + ingresso para o Espetáculo Magic.'
+        },
+        es: {
+          badge: 'Dreams • Pasaporte',
+          titulo: 'Pasaporte Dreams 5 Atracciones + Magic Show',
+          descricao: 'Los 5 parques de Dreams Park Show + entrada para el Espectáculo Magic.'
+        },
+        en: {
+          badge: 'Dreams • Pass',
+          titulo: 'Dreams 5-Attraction Pass + Magic Show',
+          descricao: 'All 5 Dreams Park Show attractions plus admission to the Magic Show.'
+        }
+      },
+      {
+        id: 'cmb-dreams-zoo-2parques',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-paw',
+        imagem: 'img/img-dreams-zoo-combo.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 259.99,
+        pt: {
+          badge: 'Dreams • Passaporte 2 Parques',
+          titulo: 'Passaporte 2 Parques — Dreams + Zoo Park Foz',
+          descricao: 'Combo unindo as atrações do Dreams Park Show e o Zoo Park Foz.'
+        },
+        es: {
+          badge: 'Dreams • Pasaporte 2 Parques',
+          titulo: 'Pasaporte 2 Parques — Dreams + Zoo Park Foz',
+          descricao: 'Combo uniendo las atracciones de Dreams Park Show y Zoo Park Foz.'
+        },
+        en: {
+          badge: 'Dreams • 2-Park Pass',
+          titulo: '2-Park Pass — Dreams + Zoo Park Foz',
+          descricao: 'Combined pass uniting Dreams Park Show attractions and Zoo Park Foz.'
+        }
+      },
+      {
+        id: 'tkt-dreams-trio-by-night',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-moon',
+        imagem: 'img/img-dreams-trio-night.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 190.00,
+        pt: {
+          badge: 'Dreams • Trio',
+          titulo: 'Trio By Night + Espetáculo Magic',
+          descricao: 'Museu de Cera, Dreams Ice Bar, Dreams Motor Show + Espetáculo Magic.'
+        },
+        es: {
+          badge: 'Dreams • Trío',
+          titulo: 'Trío By Night + Espectáculo Magic',
+          descricao: 'Museo de Cera, Dreams Ice Bar, Dreams Motor Show + Espectáculo Magic.'
+        },
+        en: {
+          badge: 'Dreams • Trio',
+          titulo: 'By Night Trio + Magic Show',
+          descricao: 'Wax Museum, Dreams Ice Bar, Dreams Motor Show + Magic Show.'
+        }
+      },
+      {
+        id: 'cmb-dreams-motor-magic',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-motorcycle',
+        imagem: 'img/img-dreams-motor-magic.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 139.00,
+        precoMeia: 99.00,
+        pt: {
+          badge: 'Dreams • Combo Show',
+          titulo: 'Combo Motor Show + Espetáculo Magic',
+          descricao: 'Entrada para o Dreams Motor Show + show de ilusionismo e acrobacias Magic.',
+          regraMeia: 'Meia-entrada conforme legislação vigente e beneficiários legais.'
+        },
+        es: {
+          badge: 'Dreams • Combo Show',
+          titulo: 'Combo Motor Show + Espectáculo Magic',
+          descricao: 'Entrada a Dreams Motor Show + show de ilusionismo y acrobacias Magic.',
+          regraMeia: 'Tarifa reducida según legislación brasileña.'
+        },
+        en: {
+          badge: 'Dreams • Show Combo',
+          titulo: 'Motor Show + Magic Show Combo',
+          descricao: 'Admission to Dreams Motor Show plus the Magic illusion & acrobatics show.',
+          regraMeia: 'Half-price applies to eligible Brazilian concession holders.'
+        }
+      },
+
+      // --- GRUPO DREAMS INDIVIDUAIS (APENAS TICKETS) ---
+      {
+        id: 'tkt-zoo-park-individual',
+        categorias: ['tickets'],
+        icone: 'fa-crow',
+        imagem: 'img/img-zoo-park.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 99.99,
+        precoMeia: 69.00,
+        pt: {
+          badge: 'Dreams • Individual',
+          titulo: 'Zoo Park Foz',
+          descricao: 'Visita ao Zoo Park Foz para conhecer diversas espécies de aves, répteis e mamíferos.',
+          regraMeia: 'Meia-entrada para crianças (2 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Dreams • Individual',
+          titulo: 'Zoo Park Foz',
+          descricao: 'Visita a Zoo Park Foz para conocer diversas especies de aves, reptiles y mamíferos.',
+          regraMeia: 'Tarifa reducida para niños (2 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Dreams • Single Entry',
+          titulo: 'Zoo Park Foz',
+          descricao: 'Visit Zoo Park Foz to see diverse species of birds, reptiles, and mammals.',
+          regraMeia: 'Half-price for children (ages 2–11) and eligible concession holders.'
+        }
+      },
+      {
+        id: 'tkt-dreams-museu-cera',
+        categorias: ['tickets'],
+        icone: 'fa-user-tie',
+        imagem: 'img/img-dreams-museu-cera.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 99.99,
+        precoMeia: 69.00,
+        pt: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Dreamland Museu de Cera',
+          descricao: 'Mais de 100 estátuas em tamanho real de ícones do cinema, música, esportes e história.',
+          regraMeia: 'Meia-entrada para crianças (2 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Dreamland Museo de Cera',
+          descricao: 'Más de 100 estatuas a tamaño real de íconos del cine, música, deportes e historia.',
+          regraMeia: 'Tarifa reducida para niños (2 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Dreamland • Single Entry',
+          titulo: 'Dreamland Wax Museum',
+          descricao: 'Over 100 life-size wax figures of movie stars, musicians, athletes, and historical icons.',
+          regraMeia: 'Half-price for children (ages 2–11) and eligible concession holders.'
+        }
+      },
+      {
+        id: 'tkt-dreams-dinossauros',
+        categorias: ['tickets'],
+        icone: 'fa-dragon',
+        imagem: 'img/img-dreams-dinossauros.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 99.99,
+        precoMeia: 69.00,
+        pt: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Vale dos Dinossauros',
+          descricao: 'Trilha ao ar livre com dinossauros animatrônicos em tamanho real que se movem e emitem sons.',
+          regraMeia: 'Meia-entrada para crianças (2 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Valle de los Dinosaurios',
+          descricao: 'Sendero al aire libre con dinosaurios animatrónicos a tamaño real con movimiento y sonido.',
+          regraMeia: 'Tarifa reducida para niños (2 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Dreamland • Single Entry',
+          titulo: 'Dinosaur Valley',
+          descricao: 'Outdoor trail featuring life-size animatronic dinosaurs with realistic movements and sounds.',
+          regraMeia: 'Half-price for children (ages 2–11) and eligible concession holders.'
+        }
+      },
+      {
+        id: 'tkt-dreams-ice-bar',
+        categorias: ['tickets'],
+        icone: 'fa-snowflake',
+        imagem: 'img/img-dreams-ice-bar.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 99.99,
+        precoMeia: 69.00,
+        pt: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Dreams Ice Bar (Bar de Gelo)',
+          descricao: 'Experiência abaixo de zero (-10°C) com open bar de drinks e roupas térmicas inclusas.',
+          regraMeia: 'Meia-entrada para crianças (2 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Dreams Ice Bar (Bar de Hielo)',
+          descricao: 'Experiencia bajo cero (-10°C) con barra libre de tragos y ropa térmica incluida.',
+          regraMeia: 'Tarifa reducida para niños (2 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Dreamland • Single Entry',
+          titulo: 'Dreams Ice Bar',
+          descricao: 'Sub-zero (-10°C / 14°F) ice bar experience with open bar drinks and thermal coats provided.',
+          regraMeia: 'Half-price for children (ages 2–11) and eligible concession holders.'
+        }
+      },
+      {
+        id: 'tkt-dreams-motor-show',
+        categorias: ['tickets'],
+        icone: 'fa-motorcycle',
+        imagem: 'img/img-dreams-motor-show.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 99.99,
+        precoMeia: 69.00,
+        pt: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Dreams Motor Show',
+          descricao: 'Museu de motocicletas clássicas e customizadas com bar temático e música.',
+          regraMeia: 'Meia-entrada para crianças (2 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Dreamland • Individual',
+          titulo: 'Dreams Motor Show',
+          descricao: 'Museo de motocicletas clásicas y personalizadas con bar temático y música.',
+          regraMeia: 'Tarifa reducida para niños (2 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Dreamland • Single Entry',
+          titulo: 'Dreams Motor Show',
+          descricao: 'Classic and custom motorcycle museum paired with a themed restaurant and bar.',
+          regraMeia: 'Half-price for children (ages 2–11) and eligible concession holders.'
+        }
+      },
+
+      // ==========================================
+      // WONDER PARK FOZ — PASSAPORTE, QUARTETO E TRIO (EM TICKETS E COMBOS)
+      // ==========================================
+      {
+        id: 'tkt-wonder-passaporte-5',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-wand-magic-sparkles',
+        imagem: 'img/img-wonder-passaporte.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 199.00,
+        precoMeia: 170.00,
+        pt: {
+          badge: 'Wonder Park • Passaporte',
+          titulo: 'Wonder Park (Passaporte 5 Atrações)',
+          descricao: 'Acesso completo às 5 atrações do Wonder Park Foz (Movie Cars, Show das Águas, Lumina Park, Big Land e mais).',
+          regraMeia: 'Tarifa reduzida conforme critérios vigentes do parque.'
+        },
+        es: {
+          badge: 'Wonder Park • Pasaporte',
+          titulo: 'Wonder Park (Pasaporte 5 Atracciones)',
+          descricao: 'Acceso completo a las 5 atracciones de Wonder Park Foz (Movie Cars, Show de las Aguas, Lumina Park, Big Land y más).',
+          regraMeia: 'Tarifa reducida según criterios vigentes del parque.'
+        },
+        en: {
+          badge: 'Wonder Park • Pass',
+          titulo: 'Wonder Park (5-Attraction Pass)',
+          descricao: 'Full access to all 5 Wonder Park Foz attractions (Movie Cars, Night Water Show, Lumina Park, Big Land & more).',
+          regraMeia: 'Reduced rate applies per park eligibility rules.'
+        }
+      },
+      {
+        id: 'tkt-wonder-quarteto',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-layer-group',
+        imagem: 'img/img-wonder-quarteto.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 180.00,
+        precoMeia: 150.00,
+        pt: {
+          badge: 'Wonder Park • Quarteto',
+          titulo: 'Wonder Park Quarteto (Movie Cars + Show + Lumina + Big Land)',
+          descricao: 'Combinação de 4 atrações: Movie Cars, Show das Águas, Lumina Park e Big Land.',
+          regraMeia: 'Tarifa reduzida conforme critérios vigentes do parque.'
+        },
+        es: {
+          badge: 'Wonder Park • Cuarteto',
+          titulo: 'Wonder Park Cuarteto (Movie Cars + Show + Lumina + Big Land)',
+          descricao: 'Combinación de 4 atracciones: Movie Cars, Show de las Aguas, Lumina Park y Big Land.',
+          regraMeia: 'Tarifa reducida según criterios vigentes del parque.'
+        },
+        en: {
+          badge: 'Wonder Park • 4-Pack',
+          titulo: 'Wonder Park Quartet (Movie Cars + Show + Lumina + Big Land)',
+          descricao: '4-attraction bundle: Movie Cars, Night Water Show, Lumina Park & Big Land.',
+          regraMeia: 'Reduced rate applies per park eligibility rules.'
+        }
+      },
+      {
+        id: 'tkt-wonder-trio',
+        categorias: ['tickets', 'combos'],
+        icone: 'fa-star',
+        imagem: 'img/img-wonder-trio.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 150.00,
+        precoMeia: 120.00,
+        pt: {
+          badge: 'Wonder Park • Trio',
+          titulo: 'Wonder Park Trio (Movie Cars + Show das Águas + Lumina Park)',
+          descricao: 'Acesso aos 3 atrativos principais: Movie Cars, Show das Águas (noturno) e Lumina Park (floresta iluminada).',
+          regraMeia: 'Tarifa reduzida conforme critérios vigentes do parque.'
+        },
+        es: {
+          badge: 'Wonder Park • Trío',
+          titulo: 'Wonder Park Trío (Movie Cars + Show de las Aguas + Lumina Park)',
+          descricao: 'Acceso a los 3 atractivos principales: Movie Cars, Show de las Aguas (nocturno) y Lumina Park (bosque iluminado).',
+          regraMeia: 'Tarifa reducida según criterios vigentes del parque.'
+        },
+        en: {
+          badge: 'Wonder Park • Trio',
+          titulo: 'Wonder Park Trio (Movie Cars + Night Water Show + Lumina Park)',
+          descricao: 'Access to the 3 main attractions: Movie Cars, Night Water Show & Lumina Park (illuminated forest).',
+          regraMeia: 'Reduced rate applies per park eligibility rules.'
+        }
+      },
+
+      // --- WONDER PARK INDIVIDUAIS (APENAS TICKETS) ---
+      {
+        id: 'tkt-wonder-movie-cars',
+        categorias: ['tickets'],
+        icone: 'fa-car',
+        imagem: 'img/img-wonder-movie-cars.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 100.00,
+        precoMeia: 50.00,
+        pt: {
+          badge: 'Wonder Park • Individual',
+          titulo: 'Movie Cars Entertainment',
+          descricao: 'Mais de 40 veículos icônicos do cinema e da música em cenários imersivos cinematográficos.',
+          regraMeia: 'Meia para crianças (4 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Wonder Park • Individual',
+          titulo: 'Movie Cars Entertainment',
+          descricao: 'Más de 40 vehículos icónicos del cine y la música en escenarios cinematográficos.',
+          regraMeia: 'Tarifa reducida para niños (4 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Wonder Park • Single Entry',
+          titulo: 'Movie Cars Entertainment',
+          descricao: 'Over 40 iconic movie and music vehicles displayed inside Hollywood-style sets.',
+          regraMeia: 'Half-price for children (ages 4–11) and eligible concession holders.'
+        }
+      },
+      {
+        id: 'tkt-wonder-show-aguas',
+        categorias: ['tickets'],
+        icone: 'fa-droplet',
+        imagem: 'img/img-wonder-show-aguas.webp',
+        tipoCobranca: 'pessoa',
+        precoInteira: 100.00,
+        precoMeia: 50.00,
+        pt: {
+          badge: 'Wonder Park • Individual',
+          titulo: 'Show das Águas (Wonder Park)',
+          descricao: 'Espetáculo noturno de águas dançantes com projeções 3D, luzes e trilha sonora.',
+          regraMeia: 'Meia para crianças (4 a 11 anos), estudantes BR, idosos BR e PcD.'
+        },
+        es: {
+          badge: 'Wonder Park • Individual',
+          titulo: 'Show de las Aguas (Wonder Park)',
+          descricao: 'Espectáculo nocturno de aguas danzantes con proyecciones 3D, luces y banda sonora.',
+          regraMeia: 'Tarifa reducida para niños (4 a 11 años) y beneficiarios legales.'
+        },
+        en: {
+          badge: 'Wonder Park • Single Entry',
+          titulo: 'Water Show (Wonder Park)',
+          descricao: 'Nighttime dancing fountains show with 3D projections, lights, and music.',
+          regraMeia: 'Half-price for children (ages 4–11) and eligible concession holders.'
+        }
+      },
+
+      // ==========================================
+      // TRANSFERS PRIVATIVOS (POR VEÍCULO)
+      // ==========================================
+      {
+        id: 'trf-aeroporto-igu',
+        categorias: ['transfers'],
+        icone: 'fa-plane-arrival',
+        imagem: 'img/img-transfer-aeroporto.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 120.00,
+        pt: {
+          badge: 'Transfer • Até 4 pax',
+          titulo: 'Transfer Aeroporto Foz (IGU) ⇄ Hotel',
+          descricao: 'Recepção no desembarque com placa e transporte privativo direto para seu hotel em Foz.'
+        },
+        es: {
+          badge: 'Traslado • Hasta 4 pax',
+          titulo: 'Traslado Aeropuerto Foz (IGU) ⇄ Hotel',
+          descricao: 'Recepción en llegadas con cartel y transporte privado directo hacia tu hotel en Foz.'
+        },
+        en: {
+          badge: 'Transfer • Up to 4 pax',
+          titulo: 'Iguazu Airport (IGU) ⇄ Hotel Transfer',
+          descricao: 'Meet & greet at arrivals with name sign and private transfer directly to your hotel.'
+        }
+      },
+      {
+        id: 'trf-cataratas-br',
+        categorias: ['transfers'],
+        icone: 'fa-car-side',
+        imagem: 'img/img-transfer-cataratas.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 160.00,
+        pt: {
+          badge: 'Transfer • Ida e Volta',
+          titulo: 'Transfer Privativo Cataratas BR + Parque das Aves',
+          descricao: 'Buscamos no hotel no horário combinado e aguardamos vocês concluírem os dois passeios.'
+        },
+        es: {
+          badge: 'Traslado • Ida y Vuelta',
+          titulo: 'Traslado Privado Cataratas BR + Parque de las Aves',
+          descricao: 'Pasamos por tu hotel a la hora acordada y los esperamos hasta finalizar ambos paseos.'
+        },
+        en: {
+          badge: 'Transfer • Round Trip',
+          titulo: 'Private Transfer Brazilian Falls + Bird Park',
+          descricao: 'Hotel pickup at your chosen time with dedicated waiting time for both attractions.'
+        }
+      },
+      {
+        id: 'trf-itaipu',
+        categorias: ['transfers'],
+        icone: 'fa-bolt',
+        imagem: 'img/img-transfer-itaipu.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 180.00,
+        pt: {
+          badge: 'Transfer • Ida e Volta',
+          titulo: 'Transfer Privativo Itaipu Binacional',
+          descricao: 'Transporte privativo ida e volta do seu hotel para qualquer passeio da Usina de Itaipu.'
+        },
+        es: {
+          badge: 'Traslado • Ida y Vuelta',
+          titulo: 'Traslado Privado Itaipú Binacional',
+          descricao: 'Transporte privado ida y vuelta desde tu hotel hacia cualquier tour de la represa de Itaipú.'
+        },
+        en: {
+          badge: 'Transfer • Round Trip',
+          titulo: 'Private Transfer Itaipu Dam',
+          descricao: 'Round-trip private transportation from your hotel to any Itaipu Dam tour.'
+        }
+      },
+      {
+        id: 'trf-marco-roda',
+        categorias: ['transfers'],
+        icone: 'fa-monument',
+        imagem: 'img/img-transfer-marco.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 140.00,
+        pt: {
+          badge: 'Transfer • Ida e Volta',
+          titulo: 'Transfer Marco das 3 Fronteiras + Yup Star',
+          descricao: 'Saída no fim da tarde e retorno após o show noturno com conforto e pontualidade.'
+        },
+        es: {
+          badge: 'Traslado • Ida y Vuelta',
+          titulo: 'Traslado Hito 3 Fronteras + Rueda Gigante Yup Star',
+          descricao: 'Salida por la tarde y regreso tras el show nocturno con total comodidad y puntualidad.'
+        },
+        en: {
+          badge: 'Transfer • Round Trip',
+          titulo: 'Three Borders Landmark + Yup Star Transfer',
+          descricao: 'Late afternoon pickup and return after the evening cultural show.'
+        }
+      },
+      {
+        id: 'trf-compras-paraguai',
+        categorias: ['transfers'],
+        icone: 'fa-bag-shopping',
+        imagem: 'img/img-compras-paraguai.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 400.00,
+        pt: {
+          badge: 'Transfer • Paraguai',
+          titulo: 'Transfer Privativo Compras Ciudad del Este',
+          descricao: 'Travessia segura até os principais shoppings (Cellshop, Shopping China, Monalisa, Nissei).'
+        },
+        es: {
+          badge: 'Traslado • Paraguay',
+          titulo: 'Traslado Privado Compras Ciudad del Este',
+          descricao: 'Cruce seguro hacia los principales shoppings (Cellshop, Shopping China, Monalisa, Nissei).'
+        },
+        en: {
+          badge: 'Transfer • Paraguay',
+          titulo: 'Ciudad del Este Shopping Private Transfer',
+          descricao: 'Safe round-trip border crossing to top shopping centers (Cellshop, Shopping China, Monalisa).'
+        }
+      },
+      {
+        id: 'trf-by-night-argentina',
+        categorias: ['transfers'],
+        icone: 'fa-wine-glass',
+        imagem: 'img/img-puerto-iguazu.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 400.00,
+        pt: {
+          badge: 'Transfer • Argentina',
+          titulo: 'Transfer By Night Argentina (Feirinha + Jantar)',
+          descricao: 'Ida e volta privativa com orientação aduaneira e espera combinada para jantar e compras.'
+        },
+        es: {
+          badge: 'Traslado • Argentina',
+          titulo: 'Traslado By Night Argentina (Feirinha + Cena)',
+          descricao: 'Ida y vuelta privada con asistencia en aduana y espera acordada para cenar y pasear.'
+        },
+        en: {
+          badge: 'Transfer • Argentina',
+          titulo: 'Argentina By Night Transfer (Puerto Iguazú Dinner)',
+          descricao: 'Round-trip private transfer with customs assistance and waiting time for dinner & local market.'
+        }
+      },
+      {
+        id: 'trf-cataratas-ar',
+        categorias: ['transfers'],
+        icone: 'fa-route',
+        imagem: 'img/img-cataratas-ar.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 500.00,
+        pt: {
+          badge: 'Transfer • Argentina',
+          titulo: 'Transfer Privativo Cataratas Argentinas',
+          descricao: 'Passeio de dia completo pelo lado argentino (Garganta do Diabo) com suporte nas aduanas.'
+        },
+        es: {
+          badge: 'Traslado • Argentina',
+          titulo: 'Traslado Privado Cataratas Argentinas',
+          descricao: 'Paseo de día completo en el lado argentino (Garganta del Diablo) con asistencia aduanera.'
+        },
+        en: {
+          badge: 'Transfer • Argentina',
+          titulo: 'Argentine Iguazu Falls Private Transfer',
+          descricao: 'Full-day private transfer to the Argentine side (Devil’s Throat) with border crossing support.'
+        }
+      },
+      {
+        id: 'cmb-cataratas-ar-by-night',
+        categorias: ['transfers', 'combos'],
+        icone: 'fa-moon',
+        imagem: 'img/img-cataratas-by-night.webp',
+        tipoCobranca: 'veiculo',
+        precoInteira: 800.00,
+        pt: {
+          badge: 'Combo Transfer • Argentina',
+          titulo: 'Transfer Cataratas Argentinas + By Night Puerto Iguazú',
+          descricao: 'Dia completo nas Cataratas AR emendando com jantar e Feirinha em Puerto Iguazú (por veículo).'
+        },
+        es: {
+          badge: 'Combo Traslado • Argentina',
+          titulo: 'Traslado Cataratas Argentinas + By Night Puerto Iguazú',
+          descricao: 'Día completo en Cataratas AR continuando con cena y paseo nocturno en Puerto Iguazú (por vehículo).'
+        },
+        en: {
+          badge: 'Combo Transfer • Argentina',
+          titulo: 'Argentine Falls + Puerto Iguazú By Night Transfer',
+          descricao: 'Full day at Argentine Iguazu Falls followed by evening dinner and market in Puerto Iguazú (per vehicle).'
+        }
+      }
+    ];
+
+    let carrinho = [];
+
+    function formatarMoeda(valor) {
+      return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function mudarIdioma(lang) {
+      idiomaAtual = lang;
+      const t = i18n[lang];
+
+      document.querySelectorAll('.btn-lang').forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.className = 'btn-lang px-2 sm:px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-[#8FD14F] text-[#071C3B] flex items-center gap-1.5 cursor-pointer';
+        } else {
+          btn.className = 'btn-lang px-2 sm:px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-white hover:text-[#8FD14F] flex items-center gap-1.5 cursor-pointer';
+        }
+      });
+
+      document.getElementById('nav-subtitle').innerText = t.navSubtitle;
+      document.getElementById('nav-catalogo').innerText = t.navCatalogo;
+      document.getElementById('nav-diferenciais').innerText = t.navDiferenciais;
+      document.getElementById('nav-como').innerText = t.navComo;
+      document.getElementById('nav-orcamento').innerText = t.navOrcamento;
+
+      document.getElementById('hero-badge').innerText = t.heroBadge;
+      document.getElementById('hero-title').innerHTML = t.heroTitle;
+      document.getElementById('hero-desc').innerText = t.heroDesc;
+      document.getElementById('hero-cta-primary').innerText = t.heroCtaPrimary;
+      document.getElementById('hero-cta-secondary').innerText = t.heroCtaSecondary;
+
+      document.getElementById('cat-eyebrow').innerText = t.catEyebrow;
+      document.getElementById('cat-title').innerText = t.catTitle;
+      document.getElementById('cat-subtitle').innerText = t.catSubtitle;
+
+      document.getElementById('flt-todos').innerText = t.fltTodos;
+      document.getElementById('flt-tickets').innerText = t.fltTickets;
+      document.getElementById('flt-transfers').innerText = t.fltTransfers;
+      document.getElementById('flt-combos').innerText = t.fltCombos;
+
+      document.getElementById('dif1-title').innerText = t.dif1Title;
+      document.getElementById('dif1-desc').innerText = t.dif1Desc;
+      document.getElementById('dif2-title').innerText = t.dif2Title;
+      document.getElementById('dif2-desc').innerText = t.dif2Desc;
+      document.getElementById('dif3-title').innerText = t.dif3Title;
+      document.getElementById('dif3-desc').innerText = t.dif3Desc;
+
+      document.getElementById('how-title').innerHTML = t.howTitle;
+      document.getElementById('how1-title').innerText = t.how1Title;
+      document.getElementById('how1-desc').innerText = t.how1Desc;
+      document.getElementById('how2-title').innerText = t.how2Title;
+      document.getElementById('how2-desc').innerText = t.how2Desc;
+      document.getElementById('how3-title').innerText = t.how3Title;
+      document.getElementById('how3-desc').innerText = t.how3Desc;
+
+      document.getElementById('footer-rights').innerText = t.footerRights;
+      document.getElementById('flt-bar-label').innerText = t.fltBarLabel;
+      document.getElementById('flt-bar-btn').innerText = t.fltBarBtn;
+
+      document.getElementById('modal-title').innerText = t.modalTitle;
+      document.getElementById('modal-subtitle').innerText = t.modalSubtitle;
+      document.getElementById('cliente-nome').placeholder = t.placeholderNome;
+      document.getElementById('cliente-data').placeholder = t.placeholderData;
+      document.getElementById('modal-total-label').innerText = t.modalTotalLabel;
+      document.getElementById('modal-send-btn').innerText = t.modalSendBtn;
+
+      renderizarCatalogo(categoriaAtual);
+      renderizarListaCarrinho();
+    }
+
+    function selecionarTarifa(id, tipo) {
+      selecaoTarifaCard[id] = tipo;
+      renderizarCatalogo(categoriaAtual);
+    }
+
+    function renderizarCatalogo(categoria = 'todos') {
+      categoriaAtual = categoria;
+      const t = i18n[idiomaAtual];
+      const grid = document.getElementById('grid-catalogo');
+      grid.innerHTML = '';
+
+      const filtrados = categoria === 'todos'
+        ? catalogoProdutos
+        : catalogoProdutos.filter(p => p.categorias.includes(categoria));
+
+      filtrados.forEach(item => {
+        const dadosIdioma = item[idiomaAtual] || item.pt;
+        const temMeia = typeof item.precoMeia === 'number';
+        const tarifaAtiva = selecaoTarifaCard[item.id] || (item.tipoTarifaEspecial === 'mercosul' && idiomaAtual !== 'en' ? 'meia' : 'inteira');
+        const precoExibido = (temMeia && tarifaAtiva === 'meia') ? item.precoMeia : item.precoInteira;
+        const unidade = item.tipoCobranca === 'veiculo' ? t.porVeiculo : t.porPessoa;
+
+        const labelBtnInteira = item.tipoTarifaEspecial === 'mercosul' ? t.labelIntegralEstrangeiro : t.labelInteira;
+        const labelBtnMeia = item.tipoTarifaEspecial === 'mercosul' ? t.labelMercosul : t.labelMeia;
+
+        const seletorMeiaHTML = temMeia ? `
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <div class="grid grid-cols-2 gap-1.5 bg-slate-100 p-1 rounded-xl">
+              <button onclick="selecionarTarifa('${item.id}', 'inteira')"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${tarifaAtiva === 'inteira' ? 'bg-[#071C3B] text-white shadow-sm' : 'text-slate-600 hover:text-[#071C3B]'}">
+                ${labelBtnInteira}<br><span class="font-extrabold">${formatarMoeda(item.precoInteira)}</span>
+              </button>
+              <button onclick="selecionarTarifa('${item.id}', 'meia')"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${tarifaAtiva === 'meia' ? 'bg-[#071C3B] text-[#8FD14F] shadow-sm' : 'text-slate-600 hover:text-[#071C3B]'}">
+                ${labelBtnMeia}<br><span class="font-extrabold">${formatarMoeda(item.precoMeia)}</span>
+              </button>
+            </div>
+            ${dadosIdioma.regraMeia ? `<p class="mt-1.5 text-[11px] text-slate-400 leading-tight"><i class="fa-solid fa-circle-info mr-1 text-[#071C3B]/60"></i>${dadosIdioma.regraMeia}</p>` : ''}
+          </div>
+        ` : '';
+
+        grid.insertAdjacentHTML('beforeend', `
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
+            <div>
+              <div class="relative h-48 overflow-hidden bg-[#071C3B]">
+                <img src="${item.imagem}" alt="${dadosIdioma.titulo}"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#071C3B]/90 text-[#8FD14F] text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+                  <i class="fa-solid ${item.icone} mr-1"></i> ${dadosIdioma.badge}
+                </span>
+              </div>
+              <div class="p-6 pb-4">
+                <h3 class="text-lg font-bold text-[#071C3B] leading-snug mb-2">${dadosIdioma.titulo}</h3>
+                <p class="text-sm text-slate-600">${dadosIdioma.descricao}</p>
+                ${seletorMeiaHTML}
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xl font-extrabold text-[#071C3B]">${formatarMoeda(precoExibido)}</span>
+                <span class="block text-[11px] font-medium text-slate-500">${unidade}</span>
+              </div>
+              <button onclick="adicionarAoCarrinho('${item.id}')"
+                class="bg-[#8FD14F] hover:bg-[#7ec23e] text-[#071C3B] font-extrabold text-sm px-4 py-2.5 rounded-xl transition-colors flex items-center gap-2 shadow-sm cursor-pointer">
+                <i class="fa-solid fa-plus"></i> ${t.btnAdicionar}
+              </button>
+            </div>
+          </div>
+        `);
+      });
+    }
+
+    function filtrarCatalogo(categoria) {
+      document.querySelectorAll('.btn-filtro').forEach(btn => {
+        if (btn.dataset.categoria === categoria) {
+          btn.className = 'btn-filtro px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-[#071C3B] text-white shadow-md cursor-pointer';
+        } else {
+          btn.className = 'btn-filtro px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-[#071C3B] border border-slate-200 hover:border-[#071C3B] cursor-pointer';
+        }
+      });
+      renderizarCatalogo(categoria);
+    }
+
+    function adicionarAoCarrinho(id) {
+      const produto = catalogoProdutos.find(p => p.id === id);
+      if (!produto) return;
+
+      const temMeia = typeof produto.precoMeia === 'number';
+      const tarifaSelecionada = temMeia
+        ? (selecaoTarifaCard[id] || (produto.tipoTarifaEspecial === 'mercosul' && idiomaAtual !== 'en' ? 'meia' : 'inteira'))
+        : 'unica';
+
+      const chaveUnica = `${id}__${tarifaSelecionada}`;
+      const precoUnitario = tarifaSelecionada === 'meia' ? produto.precoMeia : produto.precoInteira;
+
+      const existente = carrinho.find(i => i.chave === chaveUnica);
+      if (existente) {
+        existente.quantidade += 1;
+      } else {
+        carrinho.push({
+          chave: chaveUnica,
+          id: produto.id,
+          tarifa: tarifaSelecionada,
+          tipoTarifaEspecial: produto.tipoTarifaEspecial || null,
+          tipoCobranca: produto.tipoCobranca,
+          preco: precoUnitario,
+          quantidade: 1
+        });
+      }
+      atualizarUI();
+    }
+
+    function alterarQuantidade(chave, delta) {
+      const index = carrinho.findIndex(i => i.chave === chave);
+      if (index === -1) return;
+
+      carrinho[index].quantidade += delta;
+      if (carrinho[index].quantidade <= 0) {
+        carrinho.splice(index, 1);
+      }
+      atualizarUI();
+    }
+
+    function atualizarUI() {
+      const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+      const totalValor = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
+
+      document.getElementById('badge-contador').innerText = totalItens;
+      document.getElementById('flutuante-qtd').innerText = totalItens;
+      document.getElementById('flutuante-total').innerText = formatarMoeda(totalValor);
+      document.getElementById('modal-total').innerText = formatarMoeda(totalValor);
+
+      const barra = document.getElementById('barra-flutuante');
+      if (totalItens > 0) {
+        barra.classList.remove('hidden');
+      } else {
+        barra.classList.add('hidden');
+      }
+
+      renderizarListaCarrinho();
+    }
+
+    function obterLabelTarifa(item, t) {
+      if (item.tarifa === 'unica') return '';
+      if (item.tipoTarifaEspecial === 'mercosul') {
+        return item.tarifa === 'meia' ? ` (${t.labelMercosul})` : ` (${t.labelIntegralEstrangeiro})`;
+      }
+      return item.tarifa === 'meia' ? ` (${t.labelMeia})` : ` (${t.labelInteira})`;
+    }
+
+    function renderizarListaCarrinho() {
+      const t = i18n[idiomaAtual];
+      const lista = document.getElementById('lista-carrinho');
+      if (carrinho.length === 0) {
+        lista.innerHTML = `
+          <div class="text-center py-8 text-slate-400">
+            <i class="fa-solid fa-cart-plus text-3xl mb-2"></i>
+            <p class="text-sm">${t.carrinhoVazio}</p>
+          </div>
+        `;
+        return;
+      }
+
+      lista.innerHTML = carrinho.map(item => {
+        const produto = catalogoProdutos.find(p => p.id === item.id);
+        const tituloProduto = produto ? (produto[idiomaAtual] || produto.pt).titulo : item.id;
+        const tagTarifa = obterLabelTarifa(item, t);
+        const labelUnidade = item.tipoCobranca === 'veiculo' ? t.unidadeVeiculo : t.unidadePessoa;
+
+        return `
+          <div class="flex items-center justify-between gap-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div class="flex-1">
+              <h4 class="text-sm font-bold text-[#071C3B]">${tituloProduto}<span class="text-[#071C3B]/75 font-semibold">${tagTarifa}</span></h4>
+              <span class="text-xs text-slate-500">${formatarMoeda(item.preco)} / ${item.tipoCobranca === 'veiculo' ? t.porVeiculo : t.porPessoa}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="alterarQuantidade('${item.chave}', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-300 text-[#071C3B] font-bold cursor-pointer">-</button>
+              <span class="text-xs font-extrabold w-16 text-center">${item.quantidade} ${labelUnidade}</span>
+              <button onclick="alterarQuantidade('${item.chave}', 1)" class="w-7 h-7 rounded-lg bg-[#071C3B] text-white font-bold cursor-pointer">+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function abrirModalCarrinho() {
+      renderizarListaCarrinho();
+      document.getElementById('modal-carrinho').classList.remove('hidden');
+    }
+
+    function fecharModalCarrinho() {
+      document.getElementById('modal-carrinho').classList.add('hidden');
+    }
+
+    function falarDiretoWhatsApp() {
+      const t = i18n[idiomaAtual];
+      window.open(`https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(t.wppDireto)}`, '_blank');
+    }
+
+    function enviarParaWhatsApp() {
+      const t = i18n[idiomaAtual];
+      if (carrinho.length === 0) {
+        alert(t.alertaVazio);
+        return;
+      }
+
+      const nome = document.getElementById('cliente-nome').value.trim();
+      const data = document.getElementById('cliente-data').value.trim();
+      const totalValor = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
+
+      let texto = `${t.wppSaudacao}\n\n`;
+      if (nome) texto += `${t.wppCliente} ${nome}\n`;
+      if (data) texto += `${t.wppData} ${data}\n`;
+      if (nome || data) texto += `\n`;
+
+      texto += `${t.wppItens}\n`;
+      carrinho.forEach(item => {
+        const produto = catalogoProdutos.find(p => p.id === item.id);
+        const tituloProduto = produto ? (produto[idiomaAtual] || produto.pt).titulo : item.id;
+        const tagTarifa = obterLabelTarifa(item, t);
+        const unidade = item.tipoCobranca === 'veiculo' ? t.unidadeVeiculo : t.unidadePessoa;
+        const subtotal = formatarMoeda(item.preco * item.quantidade);
+        texto += `• ${item.quantidade}x ${tituloProduto}${tagTarifa} (${unidade}) — ${subtotal}\n`;
+      });
+
+      texto += `\n${t.wppTotal} ${formatarMoeda(totalValor)}\n\n${t.wppRodape}`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderizarCatalogo('todos'));
+  </script>
+</body>
+</html>
